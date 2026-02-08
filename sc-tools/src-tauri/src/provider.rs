@@ -343,15 +343,16 @@ pub struct OpenCodeModelLimit {
 #[cfg(test)]
 mod tests {
     use super::{
-        ClaudeModelConfig, CodexModelConfig, GeminiModelConfig, OpenCodeProviderConfig, Provider,
-        ProviderManager, ProviderMeta,
+        OpenCodeProviderConfig, Provider, ProviderManager, ProviderMeta,
     };
     use serde_json::json;
 
     #[test]
     fn provider_meta_serializes_pricing_model_source() {
-        let mut meta = ProviderMeta::default();
-        meta.pricing_model_source = Some("response".to_string());
+        let meta = ProviderMeta {
+            pricing_model_source: Some("response".to_string()),
+            ..Default::default()
+        };
 
         let value = serde_json::to_value(&meta).expect("serialize ProviderMeta");
 
