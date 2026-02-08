@@ -360,6 +360,11 @@ impl Database {
                         Self::migrate_v4_to_v5(conn)?;
                         Self::set_user_version(conn, 5)?;
                     }
+                    5 => {
+                        log::info!("迁移数据库从 v5 到 v6（所有 provider 设为 custom 分类）");
+                        Self::migrate_v5_to_v6(conn)?;
+                        Self::set_user_version(conn, 6)?;
+                    }
                     _ => {
                         return Err(AppError::Database(format!(
                             "未知的数据库版本 {version}，无法迁移到 {SCHEMA_VERSION}"
@@ -914,6 +919,16 @@ impl Database {
         Ok(())
     }
 
+    /// v5 -> v6 迁移：将所有 provider 的 category 设为 custom
+    fn migrate_v5_to_v6(conn: &Connection) -> Result<(), AppError> {
+        conn.execute(
+            "UPDATE providers SET category = 'custom' WHERE category IS NULL OR category != 'custom'",
+            [],
+        )
+        .map_err(|e| AppError::Database(format!("更新 provider category 失败: {e}")))?;
+        log::info!("v5 -> v6 迁移完成：所有 provider 已设为 custom 分类");
+        Ok(())
+    }
     /// 插入默认模型定价数据
     /// 格式: (model_id, display_name, input, output, cache_read, cache_creation)
     /// 注意: model_id 使用短横线格式（如 claude-haiku-4-5），与 API 返回的模型名称标准化后一致

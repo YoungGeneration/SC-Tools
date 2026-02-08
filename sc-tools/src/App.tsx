@@ -17,6 +17,7 @@ import {
   Download,
   FolderArchive,
   Search,
+  Server,
 } from "lucide-react";
 import type { Provider, VisibleApps } from "@/types";
 import type { EnvConflict } from "@/types/env";
@@ -54,6 +55,7 @@ import { DeepLinkImportDialog } from "@/components/DeepLinkImportDialog";
 import { AgentsPanel } from "@/components/agents/AgentsPanel";
 import { McpIcon } from "@/components/BrandIcons";
 import { Button } from "@/components/ui/button";
+import { ScApiPanel } from "@/components/scapi";
 import { SessionManagerPage } from "@/components/sessions/SessionManagerPage";
 
 type View =
