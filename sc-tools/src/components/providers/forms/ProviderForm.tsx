@@ -16,7 +16,6 @@ import type {
 } from "@/types";
 import { OpenCodeFormFields } from "./OpenCodeFormFields";
 import type { OpenCodeModel } from "@/types";
-import { applyTemplateValues } from "@/utils/providerConfigUtils";
 import { mergeProviderMeta } from "@/utils/providerMetaUtils";
 import { getCodexCustomTemplate } from "@/config/codexTemplates";
 import CodexConfigEditor from "./CodexConfigEditor";
@@ -159,7 +158,7 @@ export function ProviderForm({
   }));
 
   // category defaults to "custom" for simplified provider system
-  const category = "custom";
+  const category: string = "custom";
 
   useEffect(() => {
     setSelectedPresetId(initialData ? null : "custom");
@@ -299,23 +298,6 @@ export function ProviderForm({
     form.reset(defaultValues);
   }, [defaultValues, form]);
 
-  const presetCategoryLabels: Record<string, string> = useMemo(
-    () => ({
-      official: t("providerForm.categoryOfficial", {
-        defaultValue: "官方",
-      }),
-      cn_official: t("providerForm.categoryCnOfficial", {
-        defaultValue: "国内官方",
-      }),
-      aggregator: t("providerForm.categoryAggregation", {
-        defaultValue: "聚合服务",
-      }),
-      third_party: t("providerForm.categoryThirdParty", {
-        defaultValue: "第三方",
-      }),
-    }),
-    [t],
-  );
 
   const presetEntries = useMemo(() => {
     if (appId === "codex") {
@@ -340,19 +322,17 @@ export function ProviderForm({
     }));
   }, [appId]);
 
-  // 使用模板变量 hook (仅 Claude 模式)
-  const {
   // Template values disabled (presets removed)
   const templateValues: Record<string, any> = {};
   const templateValueEntries: [string, any][] = [];
   const templatePreset: any = null;
   const handleTemplateValueChange = (_key: string, _value: string) => {};
-  const validateTemplateValues = () => true;
+  const validateTemplateValues = () => ({ isValid: true as const, missingField: null as any });
 
   // Common config snippet disabled (presets removed)
   const useCommonConfig = false;
   const commonConfigSnippet = "";
-  const commonConfigError: string | null = null;
+  const commonConfigError: string = "";
   const handleCommonConfigToggle = () => {};
   const handleCommonConfigSnippetChange = (_v: string) => {};
   const isClaudeExtracting = false;
@@ -388,7 +368,7 @@ export function ProviderForm({
     handleGeminiModelChange: originalHandleGeminiModelChange,
     handleGeminiEnvChange,
     handleGeminiConfigChange,
-    resetGeminiConfig,
+    resetGeminiConfig: _resetGeminiConfig,
     envStringToObj,
     envObjToString,
   } = useGeminiConfigState({
@@ -904,22 +884,7 @@ export function ProviderForm({
     onSubmit(payload);
   };
 
-  const groupedPresets = useMemo(() => {
-    return presetEntries.reduce<Record<string, PresetEntry[]>>((acc, entry) => {
-      const category = entry.preset.category ?? "others";
-      if (!acc[category]) {
-        acc[category] = [];
-      }
-      acc[category].push(entry);
-      return acc;
-    }, {});
-  }, [presetEntries]);
 
-  const categoryKeys = useMemo(() => {
-    return Object.keys(groupedPresets).filter(
-      (key) => key !== "custom" && groupedPresets[key]?.length,
-    );
-  }, [groupedPresets]);
 
   // 判断是否显示端点测速（仅官方类别不显示）
   const shouldShowSpeedTest = category !== "official";
@@ -954,142 +919,6 @@ export function ProviderForm({
     codexBaseUrl,
     initialData,
   });
-
-  const handlePresetChange = (value: string) => {
-    setSelectedPresetId(value);
-    if (value === "custom") {
-      setActivePreset(null);
-      form.reset(defaultValues);
-
-      // Codex 自定义模式：加载模板
-      if (appId === "codex") {
-        const template = getCodexCustomTemplate();
-        resetCodexConfig(template.auth, template.config);
-      }
-      // Gemini 自定义模式：重置为空配置
-      if (appId === "gemini") {
-        resetGeminiConfig({}, {});
-      }
-      // OpenCode 自定义模式：重置为空配置
-      if (appId === "opencode") {
-        setOpencodeProviderKey("");
-        setOpencodeNpm("@ai-sdk/openai-compatible");
-        setOpencodeBaseUrl("");
-        setOpencodeApiKey("");
-        setOpencodeModels({});
-        setOpencodeExtraOptions({});
-      }
-      return;
-    }
-
-    const entry = presetEntries.find((item) => item.id === value);
-    if (!entry) {
-      return;
-    }
-
-    setActivePreset({
-      id: value,
-      category: entry.preset.category,
-      isPartner: entry.preset.isPartner,
-      partnerPromotionKey: entry.preset.partnerPromotionKey,
-    });
-
-    if (appId === "codex") {
-      const preset = entry.preset as any;
-      const auth = preset.auth ?? {};
-      const config = preset.config ?? "";
-
-      // 重置 Codex 配置
-      resetCodexConfig(auth, config);
-
-      // 更新表单其他字段
-      form.reset({
-        name: preset.name,
-        websiteUrl: preset.websiteUrl ?? "",
-        settingsConfig: JSON.stringify({ auth, config }, null, 2),
-        icon: preset.icon ?? "",
-        iconColor: preset.iconColor ?? "",
-      });
-      return;
-    }
-
-    if (appId === "gemini") {
-      const preset = entry.preset as any;
-      const env = (preset.settingsConfig as any)?.env ?? {};
-      const config = (preset.settingsConfig as any)?.config ?? {};
-
-      // 重置 Gemini 配置
-      resetGeminiConfig(env, config);
-
-      // 更新表单其他字段
-      form.reset({
-        name: preset.name,
-        websiteUrl: preset.websiteUrl ?? "",
-        settingsConfig: JSON.stringify(preset.settingsConfig, null, 2),
-        icon: preset.icon ?? "",
-        iconColor: preset.iconColor ?? "",
-      });
-      return;
-    }
-
-    // OpenCode preset handling
-    if (appId === "opencode") {
-      const preset = entry.preset as any;
-      const config = preset.settingsConfig;
-
-      // Clear provider key (user must enter their own unique key)
-      setOpencodeProviderKey("");
-
-      // Update OpenCode-specific states
-      setOpencodeNpm(config.npm || "@ai-sdk/openai-compatible");
-      setOpencodeBaseUrl(config.options?.baseURL || "");
-      setOpencodeApiKey(config.options?.apiKey || "");
-      setOpencodeModels(config.models || {});
-
-      // Extract extra options from preset
-      const options = config.options || {};
-      const extra: Record<string, string> = {};
-      const knownKeys = ["baseURL", "apiKey", "headers"];
-      for (const [k, v] of Object.entries(options)) {
-        if (!knownKeys.includes(k)) {
-          extra[k] = typeof v === "string" ? v : JSON.stringify(v);
-        }
-      }
-      setOpencodeExtraOptions(extra);
-
-      // Update form fields
-      form.reset({
-        name: preset.name,
-        websiteUrl: preset.websiteUrl ?? "",
-        settingsConfig: JSON.stringify(config, null, 2),
-        icon: preset.icon ?? "",
-        iconColor: preset.iconColor ?? "",
-      });
-      return;
-    }
-
-    const preset = entry.preset as any;
-    const config = applyTemplateValues(
-      preset.settingsConfig,
-      preset.templateValues,
-    );
-
-    // Sync preset's apiFormat to local state (for Claude providers)
-    if (preset.apiFormat) {
-      setLocalApiFormat(preset.apiFormat);
-    } else {
-      // Reset to default if preset doesn't specify apiFormat
-      setLocalApiFormat("anthropic");
-    }
-
-    form.reset({
-      name: preset.name,
-      websiteUrl: preset.websiteUrl ?? "",
-      settingsConfig: JSON.stringify(config, null, 2),
-      icon: preset.icon ?? "",
-      iconColor: preset.iconColor ?? "",
-    });
-  };
 
   return (
     <Form {...form}>

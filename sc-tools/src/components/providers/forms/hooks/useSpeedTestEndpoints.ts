@@ -93,7 +93,7 @@ export function useSpeedTestEndpoints({
         presetUrls.forEach((u) => add(u));
         // 添加预设的候选端点
         if (preset.endpointCandidates) {
-          preset.endpointCandidates.forEach((url) => add(url));
+          preset.endpointCandidates.forEach((url: string) => add(url));
         }
       }
     }
@@ -147,7 +147,7 @@ export function useSpeedTestEndpoints({
         }
         // 添加预设的候选端点
         if (preset.endpointCandidates) {
-          preset.endpointCandidates.forEach((url) => add(url));
+          preset.endpointCandidates.forEach((url: string) => add(url));
         }
       }
     }

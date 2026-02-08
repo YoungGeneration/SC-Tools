@@ -14,6 +14,12 @@ import { Plus, Trash2, ChevronRight } from "lucide-react";
 import { ApiKeySection } from "./shared";
 import { cn } from "@/lib/utils";
 import type { OpenCodeModel } from "@/types";
+const opencodeNpmPackages = [
+  { value: "@ai-sdk/openai", label: "OpenAI" },
+  { value: "@ai-sdk/openai-compatible", label: "OpenAI Compatible" },
+  { value: "@ai-sdk/anthropic", label: "Anthropic" },
+  { value: "@ai-sdk/google", label: "Google (Gemini)" },
+];
 
 /**
  * Model ID input with local state to prevent focus loss.

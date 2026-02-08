@@ -17,7 +17,6 @@ import {
   Download,
   FolderArchive,
   Search,
-  Server,
 } from "lucide-react";
 import type { Provider, VisibleApps } from "@/types";
 import type { EnvConflict } from "@/types/env";
@@ -66,7 +65,8 @@ type View =
   | "skillsDiscovery"
   | "mcp"
   | "agents"
-  | "sessions";
+  | "sessions"
+  | "scapi";
 
 // macOS Overlay mode needs space for traffic light buttons, Windows/Linux use native titlebar
 const DRAG_BAR_HEIGHT = isWindows() || isLinux() ? 0 : 28; // px
@@ -94,6 +94,7 @@ const VALID_VIEWS: View[] = [
   "mcp",
   "agents",
   "sessions",
+  "scapi",
 ];
 
 const getInitialView = (): View => {
@@ -584,6 +585,8 @@ function App() {
           return (
             <AgentsPanel onOpenChange={() => setCurrentView("providers")} />
           );
+        case "scapi":
+          return <ScApiPanel />;
         case "sessions":
           return <SessionManagerPage />;
         default:
@@ -735,6 +738,7 @@ function App() {
                   {currentView === "skillsDiscovery" && t("skills.title")}
                   {currentView === "mcp" && t("mcp.unifiedPanel.title")}
                   {currentView === "agents" && t("agents.title")}
+                  {currentView === "scapi" && "SC-API"}
                   {currentView === "sessions" && t("sessionManager.title")}
                 </h1>
               </div>
