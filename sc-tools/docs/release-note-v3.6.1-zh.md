@@ -1,4 +1,4 @@
-# CC Switch v3.6.1
+# SC-Tools v3.6.1
 
 > 稳定性提升与用户体验优化（基于 v3.6.0）
 
@@ -122,33 +122,33 @@
 **通过 Homebrew 安装（推荐）：**
 
 ```bash
-brew tap farion1231/ccswitch
-brew install --cask cc-switch
+brew tap farion1231/sctools
+brew install --cask sc-tools
 ```
 
 **手动下载：**
 
-- 从下方 [Assets](#assets) 下载 `CC-Switch-v3.6.1-macOS.zip`
+- 从下方 [Assets](#assets) 下载 `SC-Tools-v3.6.1-macOS.zip`
 
 > **注意**：由于作者没有苹果开发者账号，首次打开可能出现"未知开发者"警告。请前往"系统设置" → "隐私与安全性" → 点击"仍要打开"
 
 #### Windows
 
-- **安装包**：`CC-Switch-v3.6.1-Windows.msi`
-- **便携版**：`CC-Switch-v3.6.1-Windows-Portable.zip`
+- **安装包**：`SC-Tools-v3.6.1-Windows.msi`
+- **便携版**：`SC-Tools-v3.6.1-Windows-Portable.zip`
 
 #### Linux
 
-- **AppImage**：`CC-Switch-v3.6.1-Linux.AppImage`
-- **Debian**：`CC-Switch-v3.6.1-Linux.deb`
+- **AppImage**：`SC-Tools-v3.6.1-Linux.AppImage`
+- **Debian**：`SC-Tools-v3.6.1-Linux.deb`
 
 ---
 
 ### 📚 文档
 
-- [中文文档](https://github.com/farion1231/cc-switch/blob/main/README_ZH.md)
-- [English Documentation](https://github.com/farion1231/cc-switch/blob/main/README.md)
-- [完整更新日志](https://github.com/farion1231/cc-switch/blob/main/CHANGELOG.md)
+- [中文文档](https://github.com/farion1231/sc-tools/blob/main/README_ZH.md)
+- [English Documentation](https://github.com/farion1231/sc-tools/blob/main/README.md)
+- [完整更新日志](https://github.com/farion1231/sc-tools/blob/main/CHANGELOG.md)
 
 ---
 
@@ -161,7 +161,7 @@ brew install --cask cc-switch
 
 ---
 
-**完整变更记录**: https://github.com/farion1231/cc-switch/compare/v3.6.0...v3.6.1
+**完整变更记录**: https://github.com/farion1231/sc-tools/compare/v3.6.0...v3.6.1
 
 ---
 ---
@@ -188,7 +188,7 @@ brew install --cask cc-switch
 
 ### 自定义配置目录（云同步）
 
-- **自定义存储位置** - 自定义 CC Switch 的配置存储目录
+- **自定义存储位置** - 自定义 SC-Tools 的配置存储目录
 - **云同步支持** - 指定到云同步文件夹（Dropbox、OneDrive、iCloud Drive、坚果云等）即可实现跨设备配置自动同步
 - **独立管理** - 通过 Tauri Store 管理，更好的隔离性和可靠性
 
@@ -372,9 +372,9 @@ v3.6.0 移除了 v1 配置自动迁移和副本文件扫描逻辑：
 
 ---
 
-## 🌟 关于 CC Switch
+## 🌟 关于 SC-Tools
 
-CC Switch 是一个跨平台桌面应用，用于管理和切换 Claude Code 与 Codex 的不同供应商配置。基于 Tauri 2.0 + React 18 + TypeScript 构建，支持 Windows、macOS、Linux。
+SC-Tools 是一个跨平台桌面应用，用于管理和切换 Claude Code 与 Codex 的不同供应商配置。基于 Tauri 2.0 + React 18 + TypeScript 构建，支持 Windows、macOS、Linux。
 
 **核心特性**：
 - 🔄 一键切换多个 AI 供应商
@@ -386,4 +386,4 @@ CC Switch 是一个跨平台桌面应用，用于管理和切换 Claude Code 与
 
 ---
 
-**项目地址**: https://github.com/farion1231/cc-switch
+**项目地址**: https://github.com/farion1231/sc-tools

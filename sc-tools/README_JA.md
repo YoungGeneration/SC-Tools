@@ -2,12 +2,12 @@
 
 # Claude Code / Codex / Gemini CLI オールインワン・アシスタント
 
-[![Version](https://img.shields.io/badge/version-3.10.2-blue.svg)](https://github.com/farion1231/cc-switch/releases)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/farion1231/cc-switch/releases)
+[![Version](https://img.shields.io/badge/version-3.10.2-blue.svg)](https://github.com/farion1231/sc-tools/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/farion1231/sc-tools/releases)
 [![Built with Tauri](https://img.shields.io/badge/built%20with-Tauri%202-orange.svg)](https://tauri.app/)
-[![Downloads](https://img.shields.io/endpoint?url=https://api.pinstudios.net/api/badges/downloads/farion1231/cc-switch/total)](https://github.com/farion1231/cc-switch/releases/latest)
+[![Downloads](https://img.shields.io/endpoint?url=https://api.pinstudios.net/api/badges/downloads/farion1231/sc-tools/total)](https://github.com/farion1231/sc-tools/releases/latest)
 
-<a href="https://trendshift.io/repositories/15372" target="_blank"><img src="https://trendshift.io/api/badge/repositories/15372" alt="farion1231%2Fcc-switch | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/15372" target="_blank"><img src="https://trendshift.io/api/badge/repositories/15372" alt="farion1231%2Fsc-tools | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
 [English](README.md) | [中文](README_ZH.md) | 日本語 | [Changelog](CHANGELOG.md) | [v3.9.0 リリースノート](docs/release-note-v3.9.0-ja.md)
 
@@ -23,24 +23,24 @@
 
 <table>
 <tr>
-<td width="180"><a href="https://www.packyapi.com/register?aff=cc-switch"><img src="assets/partners/logos/packycode.png" alt="PackyCode" width="150"></a></td>
-<td>PackyCode のご支援に感謝します！PackyCode は Claude Code、Codex、Gemini などのリレーサービスを提供する信頼性の高い API 中継プラットフォームです。本ソフト利用者向けに特別割引があります：<a href="https://www.packyapi.com/register?aff=cc-switch">このリンク</a>で登録し、チャージ時に「cc-switch」クーポンを入力すると 10% オフになります。</td>
+<td width="180"><a href="https://www.packyapi.com/register?aff=sc-tools"><img src="assets/partners/logos/packycode.png" alt="PackyCode" width="150"></a></td>
+<td>PackyCode のご支援に感謝します！PackyCode は Claude Code、Codex、Gemini などのリレーサービスを提供する信頼性の高い API 中継プラットフォームです。本ソフト利用者向けに特別割引があります：<a href="https://www.packyapi.com/register?aff=sc-tools">このリンク</a>で登録し、チャージ時に「sc-tools」クーポンを入力すると 10% オフになります。</td>
 </tr>
 
 <tr>
 <td width="180"><a href="https://aigocode.com/invite/CC-SWITCH"><img src="assets/partners/logos/aigocode.png" alt="AIGoCode" width="150"></a></td>
-<td>本プロジェクトは AIGoCode のスポンサー提供でお届けしています。AIGoCode は、Claude Code・Codex・最新の Gemini モデルを統合したオールインワンのAIコーディングプラットフォームで、安定性・高速性・コストパフォーマンスに優れた開発サービスを提供します。柔軟なサブスクリプションプランを備え、レスポンスも非常に高速です。さらに、CC Switch ユーザー向けの特典として、<a href="https://aigocode.com/invite/CC-SWITCH">このリンク</a>から登録すると、初回チャージ時に10％分のボーナスクレジットが付与されます！</td>
+<td>本プロジェクトは AIGoCode のスポンサー提供でお届けしています。AIGoCode は、Claude Code・Codex・最新の Gemini モデルを統合したオールインワンのAIコーディングプラットフォームで、安定性・高速性・コストパフォーマンスに優れた開発サービスを提供します。柔軟なサブスクリプションプランを備え、レスポンスも非常に高速です。さらに、SC-Tools ユーザー向けの特典として、<a href="https://aigocode.com/invite/CC-SWITCH">このリンク</a>から登録すると、初回チャージ時に10％分のボーナスクレジットが付与されます！</td>
 </tr>
 
 <tr>
 <td width="180"><a href="https://www.aicodemirror.com/register?invitecode=9915W3"><img src="assets/partners/logos/aicodemirror.jpg" alt="AICodeMirror" width="150"></a></td>
 <td>AICodeMirror のご支援に感謝します！AICodeMirror は Claude Code / Codex / Gemini CLI の公式高安定リレーサービスを提供しており、エンタープライズ級の同時接続、迅速な請求書発行、24時間年中無休の専用テクニカルサポートを備えています。
-Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% / 2% / 9%、チャージ時にはさらに割引！AICodeMirror は CC Switch ユーザー向けに特別特典を用意：<a href="https://www.aicodemirror.com/register?invitecode=9915W3">このリンク</a>から登録すると初回チャージ 20% オフ、法人のお客様は最大 25% オフ！</td>
+Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% / 2% / 9%、チャージ時にはさらに割引！AICodeMirror は SC-Tools ユーザー向けに特別特典を用意：<a href="https://www.aicodemirror.com/register?invitecode=9915W3">このリンク</a>から登録すると初回チャージ 20% オフ、法人のお客様は最大 25% オフ！</td>
 </tr>
 
 <tr>
-<td width="180"><a href="https://cubence.com/signup?code=CCSWITCH&source=ccs"><img src="assets/partners/logos/cubence.png" alt="Cubence" width="150"></a></td>
-<td>Cubence のご支援に感謝します！Cubence は Claude Code、Codex、Gemini などのリレーサービスを提供する信頼性の高い API 中継プラットフォームで、従量課金や月額プランなど柔軟な料金体系を提供しています。CC Switch ユーザー向けの特別割引：<a href="https://cubence.com/signup?code=CCSWITCH&source=ccs">このリンク</a>で登録し、チャージ時に「CCSWITCH」クーポンを入力すると、毎回 10% オフになります！</td>
+<td width="180"><a href="https://cubence.com/signup?code=SCTOOLS&source=ccs"><img src="assets/partners/logos/cubence.png" alt="Cubence" width="150"></a></td>
+<td>Cubence のご支援に感謝します！Cubence は Claude Code、Codex、Gemini などのリレーサービスを提供する信頼性の高い API 中継プラットフォームで、従量課金や月額プランなど柔軟な料金体系を提供しています。SC-Tools ユーザー向けの特別割引：<a href="https://cubence.com/signup?code=SCTOOLS&source=ccs">このリンク</a>で登録し、チャージ時に「SCTOOLS」クーポンを入力すると、毎回 10% オフになります！</td>
 </tr>
 
 <tr>
@@ -49,8 +49,8 @@ Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% /
 </tr>
 
 <tr>
-<td width="180"><a href="https://aicoding.sh/i/CCSWITCH"><img src="assets/partners/logos/aicoding.jpg" alt="AICoding" width="150"></a></td>
-<td>AICoding.sh のご支援に感謝します！AICoding.sh —— グローバル AI モデル API 超お得な中継サービス！Claude Code 81% オフ、GPT 99% オフ！数百社の企業に高コストパフォーマンスの AI サービスを提供。Claude Code、GPT、Gemini および国内主要モデルに対応、エンタープライズ級の高同時接続、迅速な請求書発行、24 時間年中無休の専属テクニカルサポート。<a href="https://aicoding.sh/i/CCSWITCH">こちらのリンク</a>から登録した CC Switch ユーザーは、初回チャージ 10% オフ！</td>
+<td width="180"><a href="https://aicoding.sh/i/SCTOOLS"><img src="assets/partners/logos/aicoding.jpg" alt="AICoding" width="150"></a></td>
+<td>AICoding.sh のご支援に感謝します！AICoding.sh —— グローバル AI モデル API 超お得な中継サービス！Claude Code 81% オフ、GPT 99% オフ！数百社の企業に高コストパフォーマンスの AI サービスを提供。Claude Code、GPT、Gemini および国内主要モデルに対応、エンタープライズ級の高同時接続、迅速な請求書発行、24 時間年中無休の専属テクニカルサポート。<a href="https://aicoding.sh/i/SCTOOLS">こちらのリンク</a>から登録した SC-Tools ユーザーは、初回チャージ 10% オフ！</td>
 </tr>
 
 </table>
@@ -127,7 +127,7 @@ Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% /
   - 双方向のインポート/エクスポート + 双方向同期
 
 - **ディープリンクプロトコル**
-  - `ccswitch://` を全プラットフォームで登録
+  - `sctools://` を全プラットフォームで登録
   - 共有リンクからプロバイダ設定をワンクリックでインポート
   - セキュリティ検証 + ライフサイクル統合
 
@@ -176,14 +176,14 @@ Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% /
 **方法 1: Homebrew でインストール（推奨）**
 
 ```bash
-brew tap farion1231/ccswitch
-brew install --cask cc-switch
+brew tap farion1231/sctools
+brew install --cask sc-tools
 ```
 
 アップデート:
 
 ```bash
-brew upgrade --cask cc-switch
+brew upgrade --cask sc-tools
 ```
 
 **方法 2: 手動ダウンロード**
@@ -197,7 +197,7 @@ brew upgrade --cask cc-switch
 **paru でインストール（推奨）**
 
 ```bash
-paru -S cc-switch-bin
+paru -S sc-tools-bin
 ```
 
 ### Linux ユーザー
@@ -213,7 +213,7 @@ Flatpak のインストールと起動：
 
 ```bash
 flatpak install --user ./CC-Switch-v{version}-Linux.flatpak
-flatpak run com.ccswitch.desktop
+flatpak run com.sctools.desktop
 ```
 
 ## クイックスタート
@@ -283,11 +283,11 @@ flatpak run com.ccswitch.desktop
 - MCP サーバー: `~/.gemini/settings.json` → `mcpServers`
 - トレイでのクイックスイッチ: プロバイダ切り替えごとに `~/.gemini/.env` を書き換えるため Gemini CLI の再起動は不要
 
-**CC Switch 保存先 (v3.8.0 新アーキテクチャ)**
+**SC-Tools 保存先 (v3.8.0 新アーキテクチャ)**
 
-- データベース (SSOT): `~/.cc-switch/cc-switch.db`（SQLite。プロバイダ、MCP、Prompts、Skills を保存）
-- ローカル設定: `~/.cc-switch/settings.json`（デバイスレベル設定）
-- バックアップ: `~/.cc-switch/backups/`（自動ローテーション、最新 10 件を保持）
+- データベース (SSOT): `~/.sc-tools/sc-tools.db`（SQLite。プロバイダ、MCP、Prompts、Skills を保存）
+- ローカル設定: `~/.sc-tools/settings.json`（デバイスレベル設定）
+- バックアップ: `~/.sc-tools/backups/`（自動ローテーション、最新 10 件を保持）
 
 ### クラウド同期の設定
 
@@ -322,7 +322,7 @@ flatpak run com.ccswitch.desktop
 
 **コア設計パターン**
 
-- **SSOT** (Single Source of Truth): すべてのデータを `~/.cc-switch/cc-switch.db`（SQLite）に集約
+- **SSOT** (Single Source of Truth): すべてのデータを `~/.sc-tools/sc-tools.db`（SQLite）に集約
 - **二層ストレージ**: 同期データは SQLite、デバイスデータは JSON
 - **双方向同期**: 切り替え時はライブファイルへ書き込み、編集時はアクティブプロバイダから逆同期
 - **アトミック書き込み**: 一時ファイル + rename パターンで設定破損を防止
@@ -493,7 +493,7 @@ PR を送る前に以下をご確認ください:
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=farion1231/cc-switch&type=Date)](https://www.star-history.com/#farion1231/cc-switch&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=farion1231/sc-tools&type=Date)](https://www.star-history.com/#farion1231/sc-tools&Date)
 
 ## ライセンス
 

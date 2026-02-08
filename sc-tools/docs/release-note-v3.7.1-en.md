@@ -1,4 +1,4 @@
-# CC Switch v3.7.1
+# SC-Tools v3.7.1
 
 > Stability Enhancements and User Experience Improvements
 
@@ -28,7 +28,7 @@
   Added Gemini configuration directory option in settings, supports customizing `~/.gemini/` path
 
 - **ArchLinux Installation Support** (#259)
-  Added AUR installation method: `paru -S cc-switch-bin`
+  Added AUR installation method: `paru -S sc-tools-bin`
 
 ### Improvements
 
@@ -40,7 +40,7 @@
 
 ### Download
 
-Visit [Releases](https://github.com/farion1231/cc-switch/releases/latest) to download the latest version
+Visit [Releases](https://github.com/farion1231/sc-tools/releases/latest) to download the latest version
 
 ---
 
@@ -65,7 +65,7 @@ Complete support for Google Gemini CLI, becoming the third supported application
 - **Dual-file configuration** - Support for both `.env` and `settings.json` formats
 - **Auto-detection** - Automatically detect `GOOGLE_GEMINI_BASE_URL`, `GEMINI_MODEL`, etc.
 - **Full MCP support** - Complete MCP server management for Gemini
-- **Deep link integration** - Import via `ccswitch://` protocol
+- **Deep link integration** - Import via `sctools://` protocol
 - **System tray** - Quick-switch from tray menu
 
 **Provider Presets**:
@@ -180,7 +180,7 @@ Complete refactoring of MCP management system for cross-application unification.
 
 ---
 
-### Deep Link Protocol (ccswitch://)
+### Deep Link Protocol (sctools://)
 
 One-click provider configuration import via URL scheme.
 
@@ -360,7 +360,7 @@ Code Distribution:
 
 ### From Tool to Platform
 
-v3.7.0 represents a shift in CC Switch's positioning:
+v3.7.0 represents a shift in SC-Tools's positioning:
 
 | Aspect            | v3.6                     | v3.7.0                       |
 | ----------------- | ------------------------ | ---------------------------- |
@@ -392,24 +392,24 @@ v3.7.0 represents a shift in CC Switch's positioning:
 
 ### Download Links
 
-Visit [Releases](https://github.com/farion1231/cc-switch/releases/latest) to download:
+Visit [Releases](https://github.com/farion1231/sc-tools/releases/latest) to download:
 
-- **Windows**: `CC-Switch-Windows.msi` or `-Portable.zip`
-- **macOS**: `CC-Switch-macOS.tar.gz` or `.zip`
-- **Linux**: `CC-Switch-Linux.AppImage` or `.deb`
-- **ArchLinux**: `paru -S cc-switch-bin`
+- **Windows**: `SC-Tools-Windows.msi` or `-Portable.zip`
+- **macOS**: `SC-Tools-macOS.tar.gz` or `.zip`
+- **Linux**: `SC-Tools-Linux.AppImage` or `.deb`
+- **ArchLinux**: `paru -S sc-tools-bin`
 
 ### Homebrew (macOS)
 
 ```bash
-brew tap farion1231/ccswitch
-brew install --cask cc-switch
+brew tap farion1231/sctools
+brew install --cask sc-tools
 ```
 
 Update:
 
 ```bash
-brew upgrade --cask cc-switch
+brew upgrade --cask sc-tools
 ```
 
 ---
@@ -452,7 +452,7 @@ Thanks to all contributors who made this release possible:
 [Get 10% OFF with this link](https://z.ai/subscribe?ic=8JVLJQFSKB)
 
 **PackyCode** - API relay service partner
-[Register with "cc-switch" code for 10% discount](https://www.packyapi.com/register?aff=cc-switch)
+[Register with "sc-tools" code for 10% discount](https://www.packyapi.com/register?aff=sc-tools)
 
 **ShanDianShuo** - Local-first AI voice input
 [Free download](https://shandianshuo.cn) for Mac/Win
@@ -461,8 +461,8 @@ Thanks to all contributors who made this release possible:
 
 ## Feedback & Support
 
-- **Issues**: [GitHub Issues](https://github.com/farion1231/cc-switch/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/farion1231/cc-switch/discussions)
+- **Issues**: [GitHub Issues](https://github.com/farion1231/sc-tools/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/farion1231/sc-tools/discussions)
 - **Documentation**: [README](../README.md)
 - **Changelog**: [CHANGELOG.md](../CHANGELOG.md)
 

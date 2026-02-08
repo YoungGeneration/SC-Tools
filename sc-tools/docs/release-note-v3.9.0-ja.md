@@ -1,4 +1,4 @@
-# CC Switch v3.9.0
+# SC-Tools v3.9.0
 
 > ローカル API プロキシ、自動フェイルオーバー、Universal Provider、多アプリ対応の強化
 
@@ -8,7 +8,7 @@
 
 ## 概要
 
-CC Switch v3.9.0 は v3.9 ベータ（`3.9.0-1`、`3.9.0-2`、`3.9.0-3`）の安定版です。
+SC-Tools v3.9.0 は v3.9 ベータ（`3.9.0-1`、`3.9.0-2`、`3.9.0-3`）の安定版です。
 ローカル API プロキシ（アプリ別テイクオーバー対応）、自動フェイルオーバー、Universal Provider を追加し、Claude Code / Codex / Gemini CLI の安定性と操作性を大きく改善しました。
 
 **リリース日**：2026-01-07
@@ -128,8 +128,8 @@ CC Switch v3.9.0 は v3.9 ベータ（`3.9.0-1`、`3.9.0-2`、`3.9.0-3`）の安
 ## 注意事項
 
 - セキュリティ強化：JavaScript 実行器と使用量スクリプト実行に関するセキュリティ問題を修正（#151、@luojiyin1987 に感謝）。
-- SQL インポートは CC Switch がエクスポートしたバックアップのみに制限されます（安全性のため）。
-- プロキシのテイクオーバーは CLI の live 設定を変更します。CC Switch はリダイレクト前に live 設定をバックアップします。元に戻す場合はテイクオーバー無効化/プロキシ停止を行い、必要に応じてバックアップから復元してください。
+- SQL インポートは SC-Tools がエクスポートしたバックアップのみに制限されます（安全性のため）。
+- プロキシのテイクオーバーは CLI の live 設定を変更します。SC-Tools はリダイレクト前に live 設定をバックアップします。元に戻す場合はテイクオーバー無効化/プロキシ停止を行い、必要に応じてバックアップから復元してください。
 
 ## 特別な謝辞
 
@@ -137,7 +137,7 @@ CC Switch v3.9.0 は v3.9 ベータ（`3.9.0-1`、`3.9.0-2`、`3.9.0-3`）の安
 
 ## ダウンロード & インストール
 
-[Releases](https://github.com/farion1231/cc-switch/releases/latest) から該当するバージョンをダウンロードしてください。
+[Releases](https://github.com/farion1231/sc-tools/releases/latest) から該当するバージョンをダウンロードしてください。
 
 ### システム要件
 
@@ -151,38 +151,38 @@ CC Switch v3.9.0 は v3.9 ベータ（`3.9.0-1`、`3.9.0-2`、`3.9.0-3`）の安
 
 | ファイル                                | 説明                                         |
 | --------------------------------------- | -------------------------------------------- |
-| `CC-Switch-v3.9.0-Windows.msi`          | **推奨** - MSI インストーラー、自動更新対応  |
-| `CC-Switch-v3.9.0-Windows-Portable.zip` | ポータブル版、インストール不要               |
+| `SC-Tools-v3.9.0-Windows.msi`          | **推奨** - MSI インストーラー、自動更新対応  |
+| `SC-Tools-v3.9.0-Windows-Portable.zip` | ポータブル版、インストール不要               |
 
 ### macOS
 
 | ファイル                        | 説明                                                              |
 | ------------------------------- | ----------------------------------------------------------------- |
-| `CC-Switch-v3.9.0-macOS.zip`    | **推奨** - 解凍して Applications へドラッグ、Universal Binary     |
-| `CC-Switch-v3.9.0-macOS.tar.gz` | Homebrew インストールおよび自動更新用                             |
+| `SC-Tools-v3.9.0-macOS.zip`    | **推奨** - 解凍して Applications へドラッグ、Universal Binary     |
+| `SC-Tools-v3.9.0-macOS.tar.gz` | Homebrew インストールおよび自動更新用                             |
 
 > **注意**: 作者が Apple Developer アカウントを持っていないため、初回起動時に「開発元が未確認」という警告が表示される場合があります。アプリを閉じてから、「システム設定」→「プライバシーとセキュリティ」→「このまま開く」をクリックすると、正常に開けるようになります。
 
 ### Homebrew (MacOS)
 
 ```bash
-brew tap farion1231/ccswitch
-brew install --cask cc-switch
+brew tap farion1231/sctools
+brew install --cask sc-tools
 ```
 
 アップデート:
 
 ```bash
-brew upgrade --cask cc-switch
+brew upgrade --cask sc-tools
 ```
 
 ### Linux
 
 | ディストリビューション                  | 推奨形式    | インストール方法                                                               |
 | --------------------------------------- | ----------- | ------------------------------------------------------------------------------ |
-| Ubuntu / Debian / Linux Mint / Pop!\_OS | `.deb`      | `sudo dpkg -i CC-Switch-*.deb` または `sudo apt install ./CC-Switch-*.deb`     |
-| Fedora / RHEL / CentOS / Rocky Linux    | `.rpm`      | `sudo rpm -i CC-Switch-*.rpm` または `sudo dnf install ./CC-Switch-*.rpm`      |
-| openSUSE                                | `.rpm`      | `sudo zypper install ./CC-Switch-*.rpm`                                        |
+| Ubuntu / Debian / Linux Mint / Pop!\_OS | `.deb`      | `sudo dpkg -i SC-Tools-*.deb` または `sudo apt install ./SC-Tools-*.deb`     |
+| Fedora / RHEL / CentOS / Rocky Linux    | `.rpm`      | `sudo rpm -i SC-Tools-*.rpm` または `sudo dnf install ./SC-Tools-*.rpm`      |
+| openSUSE                                | `.rpm`      | `sudo zypper install ./SC-Tools-*.rpm`                                        |
 | Arch Linux / Manjaro                    | `.AppImage` | 実行権限を付与して直接実行、または AUR を使用                                  |
-| その他 / 不明                           | `.AppImage` | `chmod +x CC-Switch-*.AppImage && ./CC-Switch-*.AppImage`                      |
-| サンドボックスで実行したい場合          | `.flatpak`  | `flatpak install CC-Switch-*.flatpak`                                          |
+| その他 / 不明                           | `.AppImage` | `chmod +x SC-Tools-*.AppImage && ./SC-Tools-*.AppImage`                      |
+| サンドボックスで実行したい場合          | `.flatpak`  | `flatpak install SC-Tools-*.flatpak`                                          |

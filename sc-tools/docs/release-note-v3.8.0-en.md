@@ -1,4 +1,4 @@
-# CC Switch v3.8.0
+# SC-Tools v3.8.0
 
 > Persistence Architecture Upgrade, Laying the Foundation for Cloud Sync
 
@@ -8,7 +8,7 @@
 
 ## Overview
 
-CC Switch v3.8.0 is a major architectural upgrade that restructures the data persistence layer and user interface, laying the foundation for future cloud sync and local proxy features.
+SC-Tools v3.8.0 is a major architectural upgrade that restructures the data persistence layer and user interface, laying the foundation for future cloud sync and local proxy features.
 
 **Release Date**: 2025-11-28
 **Commits**: 51 commits since v3.7.1
@@ -302,23 +302,23 @@ Change Area Distribution:
 
 ### Download Links
 
-Visit [Releases](https://github.com/farion1231/cc-switch/releases/latest) to download:
+Visit [Releases](https://github.com/farion1231/sc-tools/releases/latest) to download:
 
-- **Windows**: `CC-Switch-v3.8.0-Windows.msi` or `-Portable.zip`
-- **macOS**: `CC-Switch-v3.8.0-macOS.tar.gz` or `.zip`
-- **Linux**: `CC-Switch-v3.8.0-Linux.AppImage` or `.deb`
+- **Windows**: `SC-Tools-v3.8.0-Windows.msi` or `-Portable.zip`
+- **macOS**: `SC-Tools-v3.8.0-macOS.tar.gz` or `.zip`
+- **Linux**: `SC-Tools-v3.8.0-Linux.AppImage` or `.deb`
 
 ### Homebrew (macOS)
 
 ```bash
-brew tap farion1231/ccswitch
-brew install --cask cc-switch
+brew tap farion1231/sctools
+brew install --cask sc-tools
 ```
 
 Update:
 
 ```bash
-brew upgrade --cask cc-switch
+brew upgrade --cask sc-tools
 ```
 
 ## Acknowledgments
@@ -337,7 +337,7 @@ Thanks to all contributors who made this release possible:
 [Get 10% off with this link](https://z.ai/subscribe?ic=8JVLJQFSKB)
 
 **PackyCode** - API Relay Service Partner
-[Use code "cc-switch" for 10% off registration](https://www.packyapi.com/register?aff=cc-switch)
+[Use code "sc-tools" for 10% off registration](https://www.packyapi.com/register?aff=sc-tools)
 
 **ShandianShuo** - Local-first AI Voice Input
 [Free download](https://shandianshuo.cn) for Mac/Windows
@@ -349,8 +349,8 @@ Thanks to all contributors who made this release possible:
 
 ## Feedback & Support
 
-- **Issue Reports**: [GitHub Issues](https://github.com/farion1231/cc-switch/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/farion1231/cc-switch/discussions)
+- **Issue Reports**: [GitHub Issues](https://github.com/farion1231/sc-tools/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/farion1231/sc-tools/discussions)
 - **Documentation**: [README](../README.md)
 - **Changelog**: [CHANGELOG.md](../CHANGELOG.md)
 
