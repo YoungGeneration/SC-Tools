@@ -589,7 +589,7 @@ export const opencodeProviderPresets: OpenCodeProviderPreset[] = [
   {
     name: "PackyCode",
     websiteUrl: "https://www.packyapi.com",
-    apiKeyUrl: "https://www.packyapi.com/register?aff=cc-switch",
+    apiKeyUrl: "https://www.packyapi.com/register?aff=sc-tools",
     settingsConfig: {
       npm: "@ai-sdk/anthropic",
       name: "PackyCode",

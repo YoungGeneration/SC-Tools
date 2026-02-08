@@ -7,7 +7,7 @@ import {
 } from "@/utils/providerConfigUtils";
 import { configApi } from "@/lib/api";
 
-const LEGACY_STORAGE_KEY = "cc-switch:common-config-snippet";
+const LEGACY_STORAGE_KEY = "sc-tools:common-config-snippet";
 const DEFAULT_COMMON_CONFIG_SNIPPET = `{
   "includeCoAuthoredBy": false
 }`;
