@@ -12,9 +12,8 @@ import {
 } from "@/components/ui/select";
 import { Plus, Trash2, ChevronRight } from "lucide-react";
 import { ApiKeySection } from "./shared";
-import { opencodeNpmPackages } from "@/config/opencodeProviderPresets";
 import { cn } from "@/lib/utils";
-import type { ProviderCategory, OpenCodeModel } from "@/types";
+import type { OpenCodeModel } from "@/types";
 
 /**
  * Model ID input with local state to prevent focus loss.
@@ -136,7 +135,7 @@ interface OpenCodeFormFieldsProps {
   // API Key
   apiKey: string;
   onApiKeyChange: (value: string) => void;
-  category?: ProviderCategory;
+  category?: string;
   shouldShowApiKeyLink: boolean;
   websiteUrl: string;
   isPartner?: boolean;

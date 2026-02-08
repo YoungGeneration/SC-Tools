@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 import ApiKeyInput from "../ApiKeyInput";
-import type { ProviderCategory } from "@/types";
+
 
 interface ApiKeySectionProps {
   id?: string;
   label?: string;
   value: string;
   onChange: (value: string) => void;
-  category?: ProviderCategory;
+  category?: string;
   shouldShowLink: boolean;
   websiteUrl: string;
   placeholder?: {

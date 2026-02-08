@@ -1,6 +1,5 @@
 // 供应商配置处理工具函数
 
-import type { TemplateValueConfig } from "../config/claudeProviderPresets";
 import { normalizeQuotes } from "@/utils/textNormalization";
 
 const isPlainObject = (value: unknown): value is Record<string, any> => {
@@ -206,7 +205,7 @@ export const getApiKeyFromConfig = (
 // 模板变量替换
 export const applyTemplateValues = (
   config: any,
-  templateValues: Record<string, TemplateValueConfig> | undefined,
+  templateValues: Record<string, { editorValue?: string; defaultValue?: string }> | undefined,
 ): any => {
   const resolvedValues = Object.fromEntries(
     Object.entries(templateValues ?? {}).map(([key, value]) => {

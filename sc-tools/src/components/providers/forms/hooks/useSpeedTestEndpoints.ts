@@ -1,12 +1,10 @@
 import { useMemo } from "react";
 import type { AppId } from "@/lib/api";
-import type { ProviderPreset } from "@/config/claudeProviderPresets";
-import type { CodexProviderPreset } from "@/config/codexProviderPresets";
 import type { ProviderMeta, EndpointCandidate } from "@/types";
 
 type PresetEntry = {
   id: string;
-  preset: ProviderPreset | CodexProviderPreset;
+  preset: any;
 };
 
 interface UseSpeedTestEndpointsProps {
@@ -77,7 +75,7 @@ export function useSpeedTestEndpoints({
     if (selectedPresetId && selectedPresetId !== "custom") {
       const entry = presetEntries.find((item) => item.id === selectedPresetId);
       if (entry) {
-        const preset = entry.preset as ProviderPreset & {
+        const preset = entry.preset as any & {
           settingsConfig?: { env?: { GOOGLE_GEMINI_BASE_URL?: string } };
           endpointCandidates?: string[];
         };
@@ -138,7 +136,7 @@ export function useSpeedTestEndpoints({
     if (selectedPresetId && selectedPresetId !== "custom") {
       const entry = presetEntries.find((item) => item.id === selectedPresetId);
       if (entry) {
-        const preset = entry.preset as CodexProviderPreset;
+        const preset = entry.preset as any;
         // 添加预设自己的 baseUrl
         const presetConfig = preset.config || "";
         const presetMatch = /base_url\s*=\s*["']([^"']+)["']/i.exec(

@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Info } from "lucide-react";
 import EndpointSpeedTest from "./EndpointSpeedTest";
 import { ApiKeySection, EndpointField } from "./shared";
-import type { ProviderCategory } from "@/types";
 
 interface EndpointCandidate {
   url: string;
@@ -16,7 +15,7 @@ interface GeminiFormFieldsProps {
   shouldShowApiKey: boolean;
   apiKey: string;
   onApiKeyChange: (key: string) => void;
-  category?: ProviderCategory;
+  category?: string;
   shouldShowApiKeyLink: boolean;
   websiteUrl: string;
   isPartner?: boolean;

@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import type { ProviderCategory } from "@/types";
+
 import {
   getApiKeyFromConfig,
   setApiKeyInConfig,
@@ -10,7 +10,7 @@ interface UseApiKeyStateProps {
   initialConfig?: string;
   onConfigChange: (config: string) => void;
   selectedPresetId: string | null;
-  category?: ProviderCategory;
+  category?: string;
   appType?: string;
 }
 

@@ -1,12 +1,10 @@
 import { useMemo } from "react";
 import type { AppId } from "@/lib/api";
 import type { CustomEndpoint } from "@/types";
-import type { ProviderPreset } from "@/config/claudeProviderPresets";
-import type { CodexProviderPreset } from "@/config/codexProviderPresets";
 
 type PresetEntry = {
   id: string;
-  preset: ProviderPreset | CodexProviderPreset;
+  preset: any;
 };
 
 interface UseCustomEndpointsProps {

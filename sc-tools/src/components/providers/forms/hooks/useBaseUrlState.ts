@@ -3,11 +3,11 @@ import {
   extractCodexBaseUrl,
   setCodexBaseUrl as setCodexBaseUrlInConfig,
 } from "@/utils/providerConfigUtils";
-import type { ProviderCategory } from "@/types";
+
 
 interface UseBaseUrlStateProps {
   appType: "claude" | "codex" | "gemini" | "opencode";
-  category: ProviderCategory | undefined;
+  category: string | undefined;
   settingsConfig: string;
   codexConfig?: string;
   onSettingsConfigChange: (config: string) => void;

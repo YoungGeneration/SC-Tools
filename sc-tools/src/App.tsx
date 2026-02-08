@@ -52,7 +52,6 @@ import { SkillsPage } from "@/components/skills/SkillsPage";
 import UnifiedSkillsPanel from "@/components/skills/UnifiedSkillsPanel";
 import { DeepLinkImportDialog } from "@/components/DeepLinkImportDialog";
 import { AgentsPanel } from "@/components/agents/AgentsPanel";
-import { UniversalProviderPanel } from "@/components/universal";
 import { McpIcon } from "@/components/BrandIcons";
 import { Button } from "@/components/ui/button";
 import { SessionManagerPage } from "@/components/sessions/SessionManagerPage";
@@ -65,7 +64,6 @@ type View =
   | "skillsDiscovery"
   | "mcp"
   | "agents"
-  | "universal"
   | "sessions";
 
 // macOS Overlay mode needs space for traffic light buttons, Windows/Linux use native titlebar
@@ -93,7 +91,6 @@ const VALID_VIEWS: View[] = [
   "skillsDiscovery",
   "mcp",
   "agents",
-  "universal",
   "sessions",
 ];
 
@@ -222,36 +219,7 @@ function App() {
   }, [activeApp, refetch]);
 
   // 监听统一供应商同步事件，刷新所有应用的供应商列表
-  useEffect(() => {
-    let unsubscribe: (() => void) | undefined;
 
-    const setupListener = async () => {
-      try {
-        const { listen } = await import("@tauri-apps/api/event");
-        unsubscribe = await listen("universal-provider-synced", async () => {
-          // 统一供应商同步后刷新所有应用的供应商列表
-          // 使用 invalidateQueries 使所有 providers 查询失效
-          await queryClient.invalidateQueries({ queryKey: ["providers"] });
-          // 同时更新托盘菜单
-          try {
-            await providersApi.updateTrayMenu();
-          } catch (error) {
-            console.error("[App] Failed to update tray menu", error);
-          }
-        });
-      } catch (error) {
-        console.error(
-          "[App] Failed to subscribe universal-provider-synced event",
-          error,
-        );
-      }
-    };
-
-    setupListener();
-    return () => {
-      unsubscribe?.();
-    };
-  }, [queryClient]);
 
   // 应用启动时检测所有应用的环境变量冲突
   useEffect(() => {
@@ -614,13 +582,6 @@ function App() {
           return (
             <AgentsPanel onOpenChange={() => setCurrentView("providers")} />
           );
-        case "universal":
-          return (
-            <div className="px-6 pt-4">
-              <UniversalProviderPanel />
-            </div>
-          );
-
         case "sessions":
           return <SessionManagerPage />;
         default:
@@ -772,10 +733,6 @@ function App() {
                   {currentView === "skillsDiscovery" && t("skills.title")}
                   {currentView === "mcp" && t("mcp.unifiedPanel.title")}
                   {currentView === "agents" && t("agents.title")}
-                  {currentView === "universal" &&
-                    t("universalProvider.title", {
-                      defaultValue: "统一供应商",
-                    })}
                   {currentView === "sessions" && t("sessionManager.title")}
                 </h1>
               </div>

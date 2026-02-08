@@ -10,8 +10,7 @@ import {
 } from "@/components/ui/select";
 import EndpointSpeedTest from "./EndpointSpeedTest";
 import { ApiKeySection, EndpointField } from "./shared";
-import type { ProviderCategory, ClaudeApiFormat } from "@/types";
-import type { TemplateValueConfig } from "@/config/claudeProviderPresets";
+import type { ClaudeApiFormat } from "@/types";
 
 interface EndpointCandidate {
   url: string;
@@ -23,15 +22,15 @@ interface ClaudeFormFieldsProps {
   shouldShowApiKey: boolean;
   apiKey: string;
   onApiKeyChange: (key: string) => void;
-  category?: ProviderCategory;
+  category?: string;
   shouldShowApiKeyLink: boolean;
   websiteUrl: string;
   isPartner?: boolean;
   partnerPromotionKey?: string;
 
   // Template Values
-  templateValueEntries: Array<[string, TemplateValueConfig]>;
-  templateValues: Record<string, TemplateValueConfig>;
+  templateValueEntries: Array<[string, { label: string; editorValue?: string; defaultValue?: string; placeholder?: string }]>;
+  templateValues: Record<string, { label: string; editorValue?: string; defaultValue?: string; placeholder?: string }>;
   templatePresetName: string;
   onTemplateValueChange: (key: string, value: string) => void;
 
